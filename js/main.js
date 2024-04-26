@@ -47,17 +47,17 @@ const confirmation = document.querySelector('.footer_items-window');
 // Регулярное выражение для проверки email
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
 
-let savedEmail = ''; // Переменная для сохранения валидного email
+let savedEmail = ''; 
 
 // Функция для обработки ввода в поле email
 function handleInput() {
-  const inputValue = formInput.value.trim(); // Получаем значение и обрезаем пробелы
-  const isValid = isEmailValid(inputValue); // Проверяем введенный email
+  const inputValue = formInput.value.trim(); 
+  const isValid = isEmailValid(inputValue); 
 
   if (isValid) {
-    formInput.style.borderColor = 'green'; // Устанавливаем рамку зеленого цвета
+    formInput.style.borderColor = 'green'; 
   } else {
-    formInput.style.borderColor = 'red'; // Устанавливаем рамку красного цвета
+    formInput.style.borderColor = 'red'; 
   }
 }
 
@@ -71,20 +71,20 @@ formInput.addEventListener('input', handleInput);
 
 // Слушатель события отправки формы
 formHtml.addEventListener('submit', function (event) {
-  event.preventDefault(); // Отменяем стандартное действие отправки формы
+  event.preventDefault();
 
-  const inputValue = formInput.value.trim(); // Получаем значение и обрезаем пробелы
+  const inputValue = formInput.value.trim(); 
 
   if (isEmailValid(inputValue)) {
-    savedEmail = inputValue; // Сохраняем валидный email
-    formInput.value = ''; // Очищаем поле ввода
-    confirmation.classList.toggle('footer_items-window-active'); // Показываем всплывающее окно
+    savedEmail = inputValue; 
+    formInput.value = ''; 
+    confirmation.classList.toggle('footer_items-window-active'); 
   }
 });
 
 // Слушатель события для закрытия всплывающего окна
 document.querySelector('.window_btn').addEventListener('click', function () {
-  confirmation.classList.remove('footer_items-window-active'); // Закрываем всплывающее окно
+  confirmation.classList.remove('footer_items-window-active'); 
 });
 
 
